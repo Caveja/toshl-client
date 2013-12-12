@@ -2,13 +2,13 @@
 
 namespace Caveja\ToshlClient;
 
-use Guzzle\Http\ClientInterface;
+use Guzzle\Http\ClientInterface as GuzzleClientInterface;
 
 /**
  * Class Client
  * @package Caveja\ToshlClient
  */
-class Client
+class Client implements ClientInterface
 {
     /**
      * @var \Guzzle\Http\ClientInterface
@@ -17,9 +17,9 @@ class Client
 
     /**
      * Constructor
-     * @param ClientInterface $client
+     * @param GuzzleClientInterface $client
      */
-    public function __construct(ClientInterface $client)
+    public function __construct(GuzzleClientInterface $client)
     {
         $this->client = $client;
     }
