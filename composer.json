@@ -3,7 +3,9 @@
     "description": "PHP client for Toshl API",
     "require": {
         "guzzle/guzzle": "~3.7",
-        "mathiasverraes/money": "@dev"
+        "mathiasverraes/money": "@dev",
+        "marc-mabe/php-enum": "@dev",
+        "nicolopignatelli/valueobjects": "@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7"
