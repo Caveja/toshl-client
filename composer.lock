@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "6d98fba2653f781c10477b9f3da23a6e",
+    "hash": "f22ceb9c28f37999162195355af60e7c",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -207,16 +207,16 @@
         },
         {
             "name": "nicolopignatelli/valueobjects",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolopignatelli/valueobjects.git",
-                "reference": "0582b056af9e18ebd29b30c73ebfedf88f7b6a65"
+                "reference": "fcf7de8667b639b9aa21c0c74a45d25bceb2768e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolopignatelli/valueobjects/zipball/0582b056af9e18ebd29b30c73ebfedf88f7b6a65",
-                "reference": "0582b056af9e18ebd29b30c73ebfedf88f7b6a65",
+                "url": "https://api.github.com/repos/nicolopignatelli/valueobjects/zipball/fcf7de8667b639b9aa21c0c74a45d25bceb2768e",
+                "reference": "fcf7de8667b639b9aa21c0c74a45d25bceb2768e",
                 "shasum": ""
             },
             "require": {
@@ -245,7 +245,7 @@
                 }
             ],
             "description": "A PHP library/collection of classes aimed to help developers with domain driven development and the use of immutable objects.",
-            "time": "2013-12-06 18:34:06"
+            "time": "2013-12-14 18:49:09"
         },
         {
             "name": "rhumsaa/uuid",
@@ -784,8 +784,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "mathiasverraes/money": 20,
-        "marc-mabe/php-enum": 20,
-        "nicolopignatelli/valueobjects": 20
+        "marc-mabe/php-enum": 20
     },
     "platform": [
 
