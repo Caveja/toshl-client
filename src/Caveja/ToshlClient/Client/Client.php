@@ -1,7 +1,8 @@
 <?php
 
-namespace Caveja\ToshlClient;
+namespace Caveja\ToshlClient\Client;
 
+use Caveja\ToshlClient\Model\User;
 use Guzzle\Http\ClientInterface as GuzzleClientInterface;
 
 /**
@@ -29,5 +30,21 @@ class Client implements ClientInterface
     {
         $this->client = $client;
         $this->clientId = $clientId;
+    }
+
+    /**
+     * @return User
+     */
+    function getUser()
+    {
+        $response = $this
+            ->client
+            ->get('/me')
+            ->send()
+        ;
+
+        $data = $response->json();
+
+        return new User($data['id'], $data['email']);
     }
 }
