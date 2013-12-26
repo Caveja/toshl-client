@@ -34,7 +34,7 @@ class Client implements ClientInterface
     /**
      * @return User
      */
-    function me()
+    public function me()
     {
         $response = $this
             ->client

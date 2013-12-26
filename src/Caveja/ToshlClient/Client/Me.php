@@ -6,8 +6,8 @@ namespace Caveja\ToshlClient\Client;
  * Class User
  * @package Caveja\ToshlClient\Client
  */
-class Me  {
-
+class Me
+{
     /**
      * @var int
      */
@@ -19,10 +19,11 @@ class Me  {
     private $email;
 
     /**
-     * @param int $id
+     * @param int    $id
      * @param string $email
      */
-    public function __construct($id, $email) {
+    public function __construct($id, $email)
+    {
         $this->id = $id;
         $this->email = $email;
     }

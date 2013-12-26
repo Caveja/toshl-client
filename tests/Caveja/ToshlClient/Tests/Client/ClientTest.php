@@ -7,14 +7,13 @@ use Guzzle\Http\Client as GuzzleClient;
 use Guzzle\Http\Message\Response;
 use Guzzle\Plugin\Mock\MockPlugin;
 use Guzzle\Tests\GuzzleTestCase;
-use \stdClass;
 
 /**
  * Class ClientTest
  * @package Caveja\ToshlClient\Tests\Client
  */
-class ClientTest extends GuzzleTestCase {
-
+class ClientTest extends GuzzleTestCase
+{
     /**
      * @var GuzzleClient
      */
@@ -31,9 +30,9 @@ class ClientTest extends GuzzleTestCase {
         $this->client = new Client($this->guzzle, 'DEAD-BEEF');
     }
 
-    public function testMe() {
+    public function testMe()
+    {
         $mock = new MockPlugin();
-
 
         $json =<<<EOT
 {

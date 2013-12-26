@@ -12,5 +12,5 @@ interface ClientInterface
     /**
      * @return User
      */
-    function me();
+    public function me();
 }
