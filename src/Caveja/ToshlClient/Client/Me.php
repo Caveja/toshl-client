@@ -8,7 +8,7 @@ use Guzzle\Http\ClientInterface as GuzzleClientInterface;
  * Class User
  * @package Caveja\ToshlClient\Client
  */
-class Me
+class Me extends Endpoint
 {
     /**
      * @var GuzzleClientInterface
