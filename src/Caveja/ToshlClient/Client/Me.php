@@ -1,13 +1,12 @@
 <?php
 
-namespace Caveja\ToshlClient\Model;
-use ValueObjects\ValueObjectInterface;
+namespace Caveja\ToshlClient\Client;
 
 /**
  * Class User
- * @package Caveja\ToshlClient\Model
+ * @package Caveja\ToshlClient\Client
  */
-class User  {
+class Me  {
 
     /**
      * @var int

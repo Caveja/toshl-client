@@ -79,7 +79,7 @@ EOT;
         $mock->addResponse(new Response(200, array('Content-type', 'application/json'), $json));
 
         $this->guzzle->addSubscriber($mock);
-        $user = $this->client->getUser();
+        $user = $this->client->me();
 
         $this->assertEquals($obj->id, $user->getId(), 'User ID should match');
         $this->assertEquals($obj->email, $user->getEmail(), 'Email should match');
