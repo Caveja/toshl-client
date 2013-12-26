@@ -82,5 +82,6 @@ EOT;
 
         $this->assertEquals($obj->id, $user->getId(), 'User ID should match');
         $this->assertEquals($obj->email, $user->getEmail(), 'Email should match');
+        $this->assertFalse($user->isPro());
     }
 }

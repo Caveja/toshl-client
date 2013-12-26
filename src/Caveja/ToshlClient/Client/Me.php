@@ -45,4 +45,12 @@ class Me
     {
         return $this->data['email'];
     }
+
+    /**
+     * @return boolean
+     */
+    public function isPro()
+    {
+        return $this->data['pro'];
+    }
 }

@@ -13,4 +13,9 @@ interface ClientInterface
      * @return Me
      */
     public function me();
+
+    /**
+     * @return Budgets
+     */
+    public function budgets();
 }
