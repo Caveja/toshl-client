@@ -82,6 +82,16 @@ EOT;
 
         $this->assertEquals($obj->id, $user->getId(), 'User ID should match');
         $this->assertEquals($obj->email, $user->getEmail(), 'Email should match');
+
+        $this->assertEquals($obj->first_name, $user->getFirstName());
+        $this->assertEquals($obj->last_name, $user->getLastName());
+
         $this->assertFalse($user->isPro());
+        $this->assertNull($user->proUntil());
+        $this->assertSame('USD', $user->getMainCurrency());
+        $this->assertSame('EUR', $user->getActiveCurrency());
+        $this->assertSame(1.31, $user->getActiveCurrencyRate());
+        $this->assertNull($user->getExtra());
+        $this->assertSame(5, $user->getStartDay());
     }
 }

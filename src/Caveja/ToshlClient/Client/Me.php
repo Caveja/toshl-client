@@ -53,4 +53,86 @@ class Me
     {
         return $this->data['pro'];
     }
+
+    /**
+     * First name getter
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->data['first_name'];
+    }
+
+    /**
+     * Last name getter
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->data['last_name'];
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function proUntil()
+    {
+        if (null === $this->data['pro_until']) {
+            return null;
+        }
+
+        return new \DateTime($this->data['pro_until']);
+    }
+
+    /**
+     * Main currency getter
+     *
+     * @return string
+     */
+    public function getMainCurrency()
+    {
+        return $this->data['main_currency'];
+    }
+
+    /**
+     * Active currency getter
+     *
+     * @return string
+     */
+    public function getActiveCurrency()
+    {
+        return $this->data['active_currency']['currency'];
+    }
+
+    /**
+     * Active currency rate getter
+     *
+     * @return string
+     */
+    public function getActiveCurrencyRate()
+    {
+        return $this->data['active_currency']['rate'];
+    }
+
+    /**
+     * Extra data, up to 255 characters
+     *
+     * @return mixed
+     */
+    public function getExtra()
+    {
+        return $this->data['extra'];
+    }
+
+    /**
+     * Start date getter
+     *
+     * @return integer
+     */
+    public function getStartDay()
+    {
+        return $this->data['start_day'];
+    }
 }
