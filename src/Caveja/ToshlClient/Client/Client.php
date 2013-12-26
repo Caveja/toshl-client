@@ -42,8 +42,6 @@ class Client implements ClientInterface
             ->send()
         ;
 
-        $data = $response->json();
-
-        return new Me($data['id'], $data['email']);
+        return new Me($this->client, $response->json());
     }
 }

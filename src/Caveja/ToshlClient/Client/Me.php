@@ -2,6 +2,8 @@
 
 namespace Caveja\ToshlClient\Client;
 
+use Guzzle\Http\ClientInterface as GuzzleClientInterface;
+
 /**
  * Class User
  * @package Caveja\ToshlClient\Client
@@ -9,23 +11,23 @@ namespace Caveja\ToshlClient\Client;
 class Me
 {
     /**
-     * @var int
+     * @var GuzzleClientInterface
      */
-    private $id;
+    private $client;
 
     /**
-     * @var string
+     * @var array
      */
-    private $email;
+    private $data;
 
     /**
-     * @param int    $id
-     * @param string $email
+     * @param GuzzleClientInterface $client
+     * @param array                 $data
      */
-    public function __construct($id, $email)
+    public function __construct(GuzzleClientInterface $client, array $data)
     {
-        $this->id = $id;
-        $this->email = $email;
+        $this->client = $client;
+        $this->data = $data;
     }
 
     /**
@@ -33,7 +35,7 @@ class Me
      */
     public function getId()
     {
-        return $this->id;
+        return $this->data['id'];
     }
 
     /**
@@ -41,6 +43,6 @@ class Me
      */
     public function getEmail()
     {
-        return $this->email;
+        return $this->data['email'];
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace Caveja\ToshlClient\Client;
-use Caveja\ToshlClient\Model\User;
+use Caveja\ToshlClient\Client\Me;
 
 /**
  * Interface ClientInterface
@@ -10,7 +10,7 @@ use Caveja\ToshlClient\Model\User;
 interface ClientInterface
 {
     /**
-     * @return User
+     * @return Me
      */
     public function me();
 }
