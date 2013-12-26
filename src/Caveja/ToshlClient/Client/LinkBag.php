@@ -12,6 +12,9 @@ class LinkBag implements \Countable
      */
     private $links = array();
 
+    /**
+     * @return int
+     */
     public function count()
     {
         return count($this->links);
