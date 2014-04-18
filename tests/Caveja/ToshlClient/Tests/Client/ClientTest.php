@@ -3,10 +3,9 @@
 namespace Caveja\ToshlClient\Tests\Client;
 
 use Caveja\ToshlClient\Client\Client;
-use Guzzle\Http\Client as GuzzleClient;
-use Guzzle\Http\Message\Response;
-use Guzzle\Plugin\Mock\MockPlugin;
-use Guzzle\Tests\GuzzleTestCase;
+use Caveja\ToshlClient\Tests\Guzzle\GuzzleTestCase;
+use GuzzleHttp\Message\Response;
+use GuzzleHttp\Stream\Stream;
 
 /**
  * Class ClientTest
@@ -14,25 +13,8 @@ use Guzzle\Tests\GuzzleTestCase;
  */
 class ClientTest extends GuzzleTestCase
 {
-    /**
-     * @var GuzzleClient
-     */
-    private $guzzle;
-
-    /**
-     * @var Client
-     */
-    private $client;
-
-    protected function setUp()
-    {
-        $this->guzzle = new GuzzleClient('https://api.test.com/');
-        $this->client = new Client($this->guzzle, 'DEAD-BEEF');
-    }
-
     public function testMe()
     {
-        $mock = new MockPlugin();
 
         $json =<<<EOT
 {
@@ -74,11 +56,15 @@ class ClientTest extends GuzzleTestCase
     "extra": null
 }
 EOT;
-        $obj = json_decode($json);
-        $mock->addResponse(new Response(200, array('Content-type', 'application/json'), $json));
+        $client = new Client($this->buildMockClient(function () use ($json) {
+            $body = Stream::factory($json);
 
-        $this->guzzle->addSubscriber($mock);
-        $user = $this->client->me();
+            return new Response(200, ['Content-type' => 'application/json'], $body);
+        }), 'DEAD-BEEF');
+
+        $obj = json_decode($json);
+
+        $user = $client->me();
 
         $this->assertEquals($obj->id, $user->getId(), 'User ID should match');
         $this->assertEquals($obj->email, $user->getEmail(), 'Email should match');

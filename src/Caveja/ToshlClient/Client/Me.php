@@ -2,7 +2,7 @@
 
 namespace Caveja\ToshlClient\Client;
 
-use Guzzle\Http\ClientInterface as GuzzleClientInterface;
+use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 
 /**
  * Class User

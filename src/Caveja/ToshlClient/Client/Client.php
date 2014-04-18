@@ -2,7 +2,7 @@
 
 namespace Caveja\ToshlClient\Client;
 
-use Guzzle\Http\ClientInterface as GuzzleClientInterface;
+use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 
 /**
  * Class Client
@@ -11,7 +11,7 @@ use Guzzle\Http\ClientInterface as GuzzleClientInterface;
 class Client implements ClientInterface
 {
     /**
-     * @var \Guzzle\Http\ClientInterface
+     * @var GuzzleClientInterface
      */
     private $client;
 
@@ -39,7 +39,6 @@ class Client implements ClientInterface
         $response = $this
             ->client
             ->get('/me')
-            ->send()
         ;
 
         return new Me($this->client, $response->json());

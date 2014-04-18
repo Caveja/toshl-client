@@ -12,4 +12,4 @@ EOT
     );
 }
 
-$loader->add('Caveja\ToshClient\Tests', __DIR__);
+$loader->add('Caveja\ToshlClient\Tests', __DIR__);
