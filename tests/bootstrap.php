@@ -11,5 +11,3 @@ $ phpunit
 EOT
     );
 }
-
-$loader->add('Caveja\ToshlClient\Tests', __DIR__);
